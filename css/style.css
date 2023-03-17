@@ -3,3 +3,101 @@
     margin: 0;
     box-sizing: border-box;
 }
+body {
+    height: 100vh;
+    background: rgb(0,168,132);
+    background: linear-gradient(0deg,  rgb(236, 229, 221) 85% ,  rgb(	18, 140, 126) 10%);
+}
+
+#app {
+    height: 100%;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+}
+
+.ms_main_container {
+    width: 80%;
+    height: 90%;
+}
+/**************************************************************************
+
+                                    PARTE SINISTRA
+
+***************************************************************************/
+
+/* Profilo */
+
+.ms_left{
+    background-color: #fff;
+}
+
+.ms_profile{
+    background-color: #EAEAEA;
+}
+.ms_user_pic{
+    width: 100px;
+}
+.ms_user_pic img{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 7px;
+}
+.ms_icons{
+    color: #B1B1B1
+    
+}
+
+/* notifiche */
+.ms_notifiche{
+    background-color: #8edafc;
+}
+.ms_bell{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: #8edafc;
+    background-color: white;
+    
+}
+
+.ms_link{
+    color:#72959a;
+    font-size: 13px;
+}
+
+/********************************************************************
+
+                                PARTE DESTRA
+
+********************************************************************/
+
+.ms_right{
+    background-color: aquamarine;
+}
+.ms_right_main {
+    background-image: url("../img/mine.jpg");
+    height: 100%;
+}
+.ms_message{
+    width: 300px;
+    border-radius: 10px;
+}
+.ms_received{
+    background-color: #d5f9ba;
+    align-self: flex-start;
+}
+.ms_sent{
+    background-color: white;
+    align-self: flex-end;
+}
+
+.ms_border_lf{
+    border-left: 1px solid lightgray;
+}
+

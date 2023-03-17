@@ -30,13 +30,14 @@ body {
 
 .ms_left{
     background-color: #fff;
+    overflow-y: hidden;
 }
 
 .ms_profile{
     background-color: #EAEAEA;
 }
 .ms_user_pic{
-    width: 100px;
+    width: 50px;
 }
 .ms_user_pic img{
     border-radius: 50%;
@@ -48,9 +49,12 @@ body {
     color: #B1B1B1
     
 }
+.ms_id {
+    display: flex;
+}
 
 /* notifiche */
-.ms_notifiche{
+.ms_notificate{
     background-color: #8edafc;
 }
 .ms_bell{
@@ -71,6 +75,11 @@ body {
     font-size: 13px;
 }
 
+.ms_last_message {
+    color: #93a2b3;
+    font-size: 10px;
+}
+
 /********************************************************************
 
                                 PARTE DESTRA
@@ -87,6 +96,12 @@ body {
 .ms_message{
     width: 300px;
     border-radius: 10px;
+    height: 50px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .ms_received{
     background-color: #d5f9ba;
@@ -100,4 +115,8 @@ body {
 .ms_border_lf{
     border-left: 1px solid lightgray;
 }
+.ms_selected {
+    background-color:#c6d2d2;
+}
+
 

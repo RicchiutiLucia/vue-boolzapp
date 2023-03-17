@@ -190,6 +190,9 @@ createApp({
             })
 
         },1000)
+    },
+    deleteMsg(index){
+        this.contacts[this.contact].messages.splice(index, 1)
     }
   }
   

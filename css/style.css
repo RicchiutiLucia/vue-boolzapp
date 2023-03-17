@@ -104,11 +104,11 @@ body {
     padding-right: 10px;
 }
 .ms_received{
-    background-color: #d5f9ba;
+    background-color: white;
     align-self: flex-start;
 }
 .ms_sent{
-    background-color: white;
+    background-color: #d5f9ba;
     align-self: flex-end;
 }
 
@@ -117,6 +117,9 @@ body {
 }
 .ms_selected {
     background-color:#c6d2d2;
+}
+.ms_color{
+    color: #6b7376;
 }
 
 

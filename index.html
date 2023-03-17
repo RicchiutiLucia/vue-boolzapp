@@ -76,18 +76,16 @@
                         <i class="m-2 fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
-                <div v-for="(elem, index) in contacts[contact].messages" :class="elem.status == sent? 'sent' : 'received'" class="ms_right_main d-flex justify-content-around">
-                   <div  class="ms_message ms_sent m-2">
-                        {{ elem.message }}
-                   </div>
-                   <div class="ms_message ms_received m-3">
-                        {{ elem.message }}
-                   </div> 
-                </div>
+                <div class="ms_right_main d-flex flex-column">
+                    <div v-for="(elem, index) in contacts[contact].messages" :class="elem.status == 'sent' ? 'ms_sent' : 'ms_received'" class="p-2 m-3 ms_message">
+                         {{ elem.message }}
+                         <span @click="deleteMsg(index)" class="m-2"></span>
+                    </div>
+                 </div>
                 <div class="ms_profile d-flex p-2 justify-content-around align-items-center">
-                    <i class="fa-regular fa-face-smile fs-4 mx-3 ms_icons"></i>
-                    <input v-model="inputMessage" @keyup.enter="sendMsg" type="text" id="userInput" class="flex-grow-1" placeholder="Scrivi il tuo messaggio">
-                    <i class="fa-solid fa-microphone fs-4 mx-3  ms_icons"></i>
+                    <i class="fa-regular fa-face-smile fs-4 mx-3 ms_color"></i>
+                    <input v-model="inputMessage" @keyup.enter="sendMsg" type="text" id="userInput" class="flex-grow-1 border-0" placeholder=" Scrivi un messaggio">
+                    <i class="fa-solid fa-microphone fs-4 mx-3  ms_color"></i>
                 </div>
             </section>
 

@@ -21,7 +21,7 @@
                 <div class="ms_profile d-flex justify-content-between">
                     <div class="ms_user_pic d-flex align-items-center">   
                         <img class="w-100" src="img/avatar_io.jpg">
-                        <span>Valeria</span>
+                        <span>Lucia</span>
                    </div>
                     <div class="ms_icons d-flex align-items-center me-2">
                         <i class="m-1 fa-solid fa-circle-notch ms_btn"></i>
@@ -41,9 +41,9 @@
                 </div>
                 <!-- barra di ricerca-->   
                 <div id="ms_search_bar">
-                    <div id="ms_search_wrapper" class="d-flex">
+                    <div id="search_wrapper" class="d-flex">
                         <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
-                        <input  v-model="research" @keyup="searchContact" id="search" type="text" placeholder="Cerca o inizia una nuova chat" >
+                        <input  id="search" type="text" placeholder="Cerca o inizia una nuova chat"  v-model="research" @keyup="searchContact" >
                     </div>
                 </div>
 
@@ -54,10 +54,10 @@
                     </div>
                     <div class="px-2 m-1">
                         <div>{{ element.name }}</div>
-                        <div class="ms_last_message"  v-if="element.messages.length != 0">{{ element.messages[element.messages.length - 1].message}}</div>
+                        <div class="ms_last_message" v-if="element.messages.length != 0">{{getLastMessage(element)}}</div>
                         <div class="ms_last_message" v-else>Non ci sono messaggi</div>
                     </div>
-                    <div class="ms_clock">12:00</div>
+                    <div class="ms_clock">{{getLastTime(element)}}</div>
                 </div>
             </section>
     

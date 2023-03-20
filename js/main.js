@@ -1,4 +1,5 @@
 const { createApp } = Vue
+const DateTime = luxon.DateTime;
 
 createApp({
   data() {
@@ -203,6 +204,12 @@ createApp({
                 element.visible = false;
             }
         });
-    }
+    },
+    getLastMessage(element){
+        return element.messages[element.messages.length -1].message;
+    },
+    getLastTime(element){
+        return  DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)
+    },
 }
 }).mount('#app')

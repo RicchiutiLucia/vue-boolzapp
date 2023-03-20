@@ -209,7 +209,7 @@ createApp({
     getLastMessage(element){
         return element.messages[element.messages.length -1].message;
     },
-    getLastTime(element){
+    getLastTime(){
         return  DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)
     },
 }

@@ -6,9 +6,6 @@ createApp({
       contact: 0,
       inputMessage: '',
       research: '',
-      currentIndex: 0,
-      newMessage: "",
-      hisNewNessage: "",
       contacts: [
           {
           name: 'Michele',

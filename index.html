@@ -20,7 +20,7 @@
                 <!-- barra profilo utente -->
                 <div class="ms_profile d-flex justify-content-between">
                     <div class="ms_user_pic d-flex align-items-center">   
-                        <img class="w-100" src="img/avatar_io.jpg">
+                        <img class="ms_img_contact" src="img/avatar_io.jpg">
                         <span>Lucia</span>
                    </div>
                     <div class="ms_icons d-flex align-items-center me-2">
@@ -50,7 +50,7 @@
                 <!-- lista contatti -->
                 <div v-for="(contact, index) in contacts" :class = "contact.visible?'d-flex':'d-none'"  @click="chatSelect(index)" :class="(index == contact) ? 'ms_selected' : ''">
                     <div class="ms_user_pic">   
-                        <img class="w-100 " :src="contacts[index].avatar">
+                        <img class="ms_img_contact" :src="contacts[index].avatar">
                     </div>
                     <div class="px-2 m-1">
                         <div>{{ contact.name }}</div>

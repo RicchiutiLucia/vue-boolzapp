@@ -6,6 +6,9 @@ createApp({
       contact: 0,
       inputMessage: '',
       research: '',
+      currentIndex: 0,
+      newMessage: "",
+      hisNewNessage: "",
       contacts: [
           {
           name: 'Michele',
@@ -198,9 +201,9 @@ createApp({
     searchContact(){
         this.contacts.forEach(element => {
             if(element.name.toLowerCase().includes(this.research.toLowerCase())){
-              element.visible=true;
+                element.visible = true;
             }else{
-              element.visible=false;
+                element.visible = false;
             }
         });
     }

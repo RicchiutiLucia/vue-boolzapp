@@ -19,14 +19,14 @@
             <section class="col-4 left p-0">
                 <!-- barra profilo utente -->
                 <div class="ms_profile d-flex justify-content-between">
-                    <div class="ms_user_pic ms_id align-items-center">   
+                    <div class="ms_user_pic d-flex align-items-center">   
                         <img class="w-100" src="img/avatar_io.jpg">
                         <span>Valeria</span>
                    </div>
                     <div class="ms_icons d-flex align-items-center me-2">
-                        <i class="m-1 fa-solid fa-circle-notch"></i>
-                        <i class="m-1 fa-solid fa-message"></i>
-                        <i class="m-1 fa-solid fa-ellipsis-vertical"></i>
+                        <i class="m-1 fa-solid fa-circle-notch btn"></i>
+                        <i class="m-1 fa-solid fa-message btn"></i>
+                        <i class="m-1 fa-solid fa-ellipsis-vertical btn"></i>
                     </div>
                 </div>
                 <!-- barra per notifica -->
@@ -40,42 +40,47 @@
                     </div>
                 </div>
                 <!-- barra di ricerca-->   
-                <div class="search-bar">
-                    <div class="input-group rounded">
-                        <span class="input-group-text border-0" id="search-addon">
-                            <i class="fas fa-search"></i>
-                        </span>
-                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                <div id="ms_search_bar">
+                    <div id="ms_search_wrapper" class="d-flex">
+                        <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
+                        <input  v-model="research" @keyup="searchContact" id="search" type="text" placeholder="Cerca o inizia una nuova chat" >
                     </div>
                 </div>
+
                 <!-- lista contatti -->
-                <div v-for="(element,index) in contacts" @click="chatSelect(index)" :class="(index == contact) ? 'ms_selected' : ''" class="contacts ms_id">
-                    <div class="ms_id">
-                        <div class="ms_user_pic">   
-                            <img class="w-100" :src="contacts[index].avatar">
-                       </div>
-                       <div>
-                        <h6>{{ element.name }}</h6>
-                        <div class="ms_last_message">{{ element.messages[element.messages.length - 1].message}}</div>
-                       </div>
+                <div v-for="(element,index) in contacts" v-show="element.visible"  @click="chatSelect(index)" :class="(index == contact) ? 'ms_selected' : ''"  class="d-flex">
+                    <div class="ms_user_pic">   
+                        <img class="w-100 " :src="contacts[index].avatar">
                     </div>
+                    <div class="px-2 m-1">
+                        <div>{{ element.name }}</div>
+                        <div class="ms_last_message"  v-if="element.messages.length != 0">{{ element.messages[element.messages.length - 1].message}}</div>
+                        <div class="last-message" v-else>Non ci sono messaggi</div>
+                    </div>
+                    <div class="ms_clock">12:00</div>
                 </div>
             </section>
     
             <!-- sezione destra -->
     
             <section class="col-8 ms_right p-0 d-flex justify-content-between flex-column">
-                <div class="ms_profile ms_border_lf d-flex justify-content-between">
-                    <div class="ms_user_pic ms_id align-items-center">   
-                        <img class="w-100" :src="contacts[contact].avatar">
-                        <span>{{contacts[contact].name}}</span>
-                   </div>
-                    <div class="ms_icons me-2 d-flex align-items-center">
-                        <i class="m-2 fa-solid fa-magnifying-glass"></i>
-                        <i class="m-2 fa-solid fa-paperclip"></i>
-                        <i class="m-2 fa-solid fa-ellipsis-vertical"></i>
+                <div id="selected-contact" class="ms_profile d-flex justify-content-between" >
+                    <div class="d-flex">
+                        <img class="ms_img_contact" :src="contacts[contact].avatar">
+                        <div class="ms-1">
+                            <div >{{contacts[contact].name}}</div>
+                            <div class="ms_last_message "> Ultimo accesso oggi alle 12:00</div>
+                        </div>
+
                     </div>
-                </div>
+                
+               
+                    <div class=" d-flex align-items-center me-2">
+                        <i class="fa-solid fa-magnifying-glass ms_icons btn"></i>
+                        <i class="fa-solid fa-paperclip ms_icons btn"></i>
+                        <i class="fa-solid fa-ellipsis-vertical ms_icons btn"></i>
+                    </div>
+                  </div>
                 <div class="ms_right_main d-flex flex-column">
                     <div v-for="(elem, index) in contacts[contact].messages" :class="elem.status == 'sent' ? 'ms_sent' : 'ms_received'" class="p-2 m-3 ms_message">
                          {{ elem.message }}
@@ -106,3 +111,4 @@
     
 </body>
 </html>
+

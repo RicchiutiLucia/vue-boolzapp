@@ -5,6 +5,7 @@ createApp({
     return {
       contact: 0,
       inputMessage: '',
+      research: '',
       contacts: [
           {
           name: 'Michele',
@@ -172,11 +173,11 @@ createApp({
   },
   methods:{
     chatSelect(index) {
-            this.contact = index;
+        this.contact = index;
     },
     sendMsg(){
         this.contacts[this.contact].messages.push({
-            date: '',
+            date: 'now',
             message: this.inputMessage,
             status: 'sent'
         })
@@ -184,7 +185,7 @@ createApp({
 
         setTimeout(()=>{
             this.contacts[this.contact].messages.push({
-                date: '',
+                date: 'now',
                 message: 'OK!',
                 status: 'received'
             })
@@ -193,8 +194,15 @@ createApp({
     },
     deleteMsg(index){
         this.contacts[this.contact].messages.splice(index, 1)
+    },
+    searchContact(){
+        this.contacts.forEach(element => {
+            if(element.name.toLowerCase().includes(this.research.toLowerCase())){
+              element.visible=true;
+            }else{
+              element.visible=false;
+            }
+        });
     }
-  }
-  
-  
+}
 }).mount('#app')

@@ -43,21 +43,21 @@
                 <div id="ms_search_bar">
                     <div id="search_wrapper" class="d-flex">
                         <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
-                        <input  id="search" type="text" placeholder="Cerca o inizia una nuova chat"  v-model="research" @keyup="searchContact" >
+                        <input  id="search" type="text" placeholder="Cerca o inizia una nuova chat"  v-model="research" @keyup="searchContact()" >
                     </div>
                 </div>
 
                 <!-- lista contatti -->
-                <div v-for="(element,index) in contacts" v-show="element.visible"   @click="chatSelect(index)" :class="(index == contact) ? 'ms_selected' : ''"  class="d-flex">
+                <div v-for="(contact, index) in contacts" :class = "contact.visible?'d-flex':'d-none'"  @click="chatSelect(index)" :class="(index == contact) ? 'ms_selected' : ''">
                     <div class="ms_user_pic">   
                         <img class="w-100 " :src="contacts[index].avatar">
                     </div>
                     <div class="px-2 m-1">
-                        <div>{{ element.name }}</div>
-                        <div class="ms_last_message" v-if="element.messages.length != 0">{{getLastMessage(element)}}</div>
+                        <div>{{ contact.name }}</div>
+                        <div class="ms_last_message" v-if="contact.messages.length != 0">{{getLastMessage(contact)}}</div>
                         <div class="ms_last_message" v-else>Non ci sono messaggi</div>
                     </div>
-                    <div class="ms_clock">{{getLastTime(element)}}</div>
+                    <div class="ms_clock">{{getLastTime(contact)}}</div>
                 </div>
             </section>
     

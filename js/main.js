@@ -200,6 +200,7 @@ createApp({
         this.contacts.forEach(element => {
             if(element.name.toLowerCase().includes(this.research.toLowerCase())){
                 element.visible = true;
+
             }else{
                 element.visible = false;
             }

@@ -188,6 +188,9 @@ body {
     vertical-align: middle
 
 }
+.d-none{
+    display: none;
+}
 
 
 

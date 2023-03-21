@@ -208,14 +208,7 @@ body {
 
 }
 
-@media screen and (max-width:1200px){
-    #app{
-        height: 100%;
-        width: 100%;
-        margin: 0;
-    }
-}
-@media screen and (max-width:768px){
-    
+.emoji{
+    width: 300px;
 }
 

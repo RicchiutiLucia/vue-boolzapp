@@ -101,7 +101,17 @@
                     </div>
                  </div>
                 <div class="ms_profile d-flex p-2 justify-content-around align-items-center">
-                    <i class="fa-regular fa-face-smile fs-4 mx-3 ms_color"></i>
+                    <span class="dropdown">
+                        <button class="ms_btn_small" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-regular fa-face-smile fs-4 mx-3 ms_color"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"> <img class="emoji" src="img/emojis-ga4828e0b2_640.png"></a></li>
+                        </ul>
+
+                    </span>
+                
+                    
                     <input v-model="inputMessage" @keyup.enter="sendMsg" type="text" id="userInput" class="flex-grow-1 border-0" placeholder=" Scrivi un messaggio">
                     <i class="fa-solid fa-microphone fs-4 mx-3  ms_color"></i>
                 </div>

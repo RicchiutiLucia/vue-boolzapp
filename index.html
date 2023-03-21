@@ -48,7 +48,7 @@
                 </div>
 
                 <!-- lista contatti -->
-                <div v-for="(element, index) in contacts"  v-show ="element.visible" :class="(index == contact) ? 'ms_selected' : ''" @click="chatSelect(index)" class="ms_d-flex">
+                <div v-for="(element, index) in contacts"  v-show ="element.visible" :class="(index == contact) ? 'ms_selected' : ''" @click="chatSelect(index)" class="ms_d-flex contact">
                     <div>   
                         <img class="ms_img_contact" :src="contacts[index].avatar">
                     </div>
@@ -57,7 +57,7 @@
                         <div class="ms_last_message" v-if="element.messages.length != 0">{{getLastMessage(element)}}</div>
                         <div class="ms_last_message" v-else>Non ci sono messaggi</div>
                     </div>
-                    <div class="ms_clock" v-if="element.messages.length > 0">{{getLastTime(element)}}</div>
+                    <div class="ms_clock" v-if="element.messages.length > 0">{{getLastTime(index)}}</div>
                     
                 </div>
             </section>
@@ -125,4 +125,3 @@
     
 </body>
 </html>
-

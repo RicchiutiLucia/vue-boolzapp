@@ -157,8 +157,15 @@ body {
 .ms_selected{
     background-color:#e9ebeb;
 }
+.contact:hover{
+    background-color:#e9ebeb;
+}
 .ms_color{
     color: #6b7376;
+}
+.ms_color:hover{
+    color:rgb(0,168,132);
+
 }
 .ms_btn {
     text-align: end;
@@ -169,6 +176,10 @@ body {
     color: #b1b1b1;
     font-size: 20px;
     vertical-align: middle;
+}
+.ms_btn:hover{
+    color:rgb(0,168,132);
+
 }
 
 .ms_btn_small{
@@ -197,5 +208,14 @@ body {
 
 }
 
-
+@media screen and (max-width:1200px){
+    #app{
+        height: 100%;
+        width: 100%;
+        margin: 0;
+    }
+}
+@media screen and (max-width:768px){
+    
+}
 

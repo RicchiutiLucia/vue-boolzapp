@@ -210,8 +210,10 @@ createApp({
     getLastMessage(element){
         return element.messages[element.messages.length -1].message;
     },
-    getLastTime(){
-        return  DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)
+    getLastTime(index){
+        return this.contacts[index].messages[this.contacts[index].messages.length -1].date;
+        
+
     },
     getOnlyTime(strDateTime){
         if(strDateTime){

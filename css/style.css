@@ -30,7 +30,7 @@ body {
 
 .ms_left{
     background-color: #fff;
-    overflow-y: hidden;
+    overflow-y: auto;
 }
 
 .ms_profile{
@@ -153,8 +153,8 @@ body {
 .ms_border_lf{
     border-left: 1px solid lightgray;
 }
-.ms_selected {
-    background-color:#c6d2d2;
+.ms_selected{
+    background-color:#6b7376;
 }
 .ms_color{
     color: #6b7376;

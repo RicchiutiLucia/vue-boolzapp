@@ -48,8 +48,8 @@
                 </div>
 
                 <!-- lista contatti -->
-                <div v-for="(contact, index) in contacts" :class = "contact.visible?'d-flex':'d-none'"  @click="chatSelect(index)" :class="(index == contact) ? 'ms_selected' : ''">
-                    <div class="ms_user_pic">   
+                <div v-for="(contact, index) in contacts" :class = "contact.visible?'d-flex':'d-none'" :class="(index == contacts)?'ms_selected':''" @click="chatSelect(index)" class="ms_left">
+                    <div>   
                         <img class="ms_img_contact" :src="contacts[index].avatar">
                     </div>
                     <div class="px-2 m-1">
@@ -69,7 +69,7 @@
                         <img class="ms_img_contact" :src="contacts[contact].avatar">
                         <div class="ms-1 p-1">
                             <div>{{contacts[contact].name}}</div>
-                            <div class="ms_last_message "> Ultimo accesso oggi alle 12:00</div>
+                            <div class="ms_last_message "> Ultimo accesso oggi alle {{getLastTime(contact)}}</div>
                         </div>
 
                     </div>

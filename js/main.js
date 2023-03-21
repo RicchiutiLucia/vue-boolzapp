@@ -212,5 +212,15 @@ createApp({
     getLastTime(){
         return  DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)
     },
+    getOnlyTime(strDateTime){
+        if(strDateTime){
+            const dateAndTime = strDateTime.split('');
+            const hourMinuteSecond = dateAndTime[1].split(':');
+            return `${hourMinuteSecond[0]}:${hourMinuteSecond[1]}}`
+        }else{
+            return '';
+        }
+
+    }
 }
 }).mount('#app')

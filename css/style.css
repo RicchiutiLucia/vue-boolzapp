@@ -154,7 +154,7 @@ body {
     border-left: 1px solid lightgray;
 }
 .ms_selected{
-    background-color:#6b7376;
+    background-color:#e9ebeb;
 }
 .ms_color{
     color: #6b7376;
@@ -181,6 +181,9 @@ body {
     font-size: 10px;
     vertical-align: middle
 
+}
+.ms_d-flex{
+    display: flex;
 }
 .d-none{
     display: none;

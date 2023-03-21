@@ -48,7 +48,7 @@
                 </div>
 
                 <!-- lista contatti -->
-                <div v-for="(contact, index) in contacts" :class = "contact.visible?'d-flex':'d-none'" :class="(index == contacts)?'ms_selected':''" @click="chatSelect(index)" class="ms_left">
+                <div v-for="(contact, index) in contacts"  v-show ="contact.visible" :class="(index == contact) ? 'ms_selected' : ''" @click="chatSelect(index)" class="ms_d-flex">
                     <div>   
                         <img class="ms_img_contact" :src="contacts[index].avatar">
                     </div>

@@ -178,7 +178,7 @@ createApp({
     },
     sendMsg(){
         this.contacts[this.contact].messages.push({
-            date: 'now',
+            date: DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS),
             message: this.inputMessage,
             status: 'sent'
         })
@@ -186,7 +186,7 @@ createApp({
 
         setTimeout(()=>{
             this.contacts[this.contact].messages.push({
-                date: 'now',
+                date: DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS),
                 message: 'OK!',
                 status: 'received'
             })
@@ -214,12 +214,12 @@ createApp({
     },
     getOnlyTime(strDateTime){
         if(strDateTime){
-            const dateAndTime = strDateTime.split('');
-            const hourMinuteSecond = dateAndTime[1].split(':');
-            return `${hourMinuteSecond[0]}:${hourMinuteSecond[1]}}`
+            const dateAndTime = strDateTime.split(' ');
+            const hourMinuteSecond = dateAndTime[1].split(':')
+            return `${hourMinuteSecond[0]}:${hourMinuteSecond[1]}`
         }else{
             return '';
-        }
+        } 
 
     }
 }

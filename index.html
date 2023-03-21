@@ -48,16 +48,16 @@
                 </div>
 
                 <!-- lista contatti -->
-                <div v-for="(contact, index) in contacts"  v-show ="contact.visible" :class="(index == contact) ? 'ms_selected' : ''" @click="chatSelect(index)" class="ms_d-flex">
+                <div v-for="(element, index) in contacts"  v-show ="element.visible" :class="(index == contact) ? 'ms_selected' : ''" @click="chatSelect(index)" class="ms_d-flex">
                     <div>   
                         <img class="ms_img_contact" :src="contacts[index].avatar">
                     </div>
                     <div class="px-2 m-1">
-                        <div>{{ contact.name }}</div>
-                        <div class="ms_last_message" v-if="contact.messages.length != 0">{{getLastMessage(contact)}}</div>
+                        <div>{{ element.name }}</div>
+                        <div class="ms_last_message" v-if="element.messages.length != 0">{{getLastMessage(element)}}</div>
                         <div class="ms_last_message" v-else>Non ci sono messaggi</div>
                     </div>
-                    <div class="ms_clock">{{getLastTime(contact)}}</div>
+                    <div class="ms_clock">{{getLastTime(element)}}</div>
                 </div>
             </section>
     
@@ -83,17 +83,20 @@
                   </div>
                 <div class="ms_right_main d-flex flex-column">
                     <div v-for="(elem, index) in contacts[contact].messages" :class="elem.status == 'sent' ? 'ms_sent' : 'ms_received'" class="p-2 m-3 ms_message">
-                        <span>{{ elem.message }}</span>
-                        <div class="dropdown">
-                            <button class="ms_btn_small" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </button>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">Message Info</a></li>
-                              <li><a  @click.stop="deleteMsg(index)" class="dropdown-item" href="#">Delete Message</a></li>
-                              
-                            </ul>
-                          </div>
+                        <div>
+                            {{ elem.message }}
+                            <span class="dropdown">
+                                <button class="ms_btn_small" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="#">Message Info</a></li>
+                                  <li><a  @click.stop="deleteMsg(index)" class="dropdown-item" href="#">Delete Message</a></li>
+                                  
+                                </ul>
+                            </span>
+                        </div>
+                        <div class="ms_dateTime">{{getOnlyTime(elem.date) }}</div>
                     </div>
                  </div>
                 <div class="ms_profile d-flex p-2 justify-content-around align-items-center">

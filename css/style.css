@@ -138,6 +138,7 @@ body {
     font-size: 13px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -187,6 +188,13 @@ body {
 }
 .d-none{
     display: none;
+}
+.ms_dateTime{
+    align-self: flex-end;
+    color: #bababa;
+    font-size: 11px;
+    margin-top: 8px;
+
 }
 
 

@@ -30,7 +30,7 @@ body {
 
 .ms_left{
     background-color: #fff;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 .ms_profile{

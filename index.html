@@ -57,7 +57,8 @@
                         <div class="ms_last_message" v-if="element.messages.length != 0">{{getLastMessage(element)}}</div>
                         <div class="ms_last_message" v-else>Non ci sono messaggi</div>
                     </div>
-                    <div class="ms_clock">{{getLastTime(element)}}</div>
+                    <div class="ms_clock" v-if="element.messages.length > 0">{{getLastTime(element)}}</div>
+                    
                 </div>
             </section>
     

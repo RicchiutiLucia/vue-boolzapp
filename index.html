@@ -70,7 +70,7 @@
                         <img class="ms_img_contact" :src="contacts[contact].avatar">
                         <div class="ms-1 p-1">
                             <div>{{contacts[contact].name}}</div>
-                            <div class="ms_last_message "> Ultimo accesso oggi alle {{getLastTime(contact)}}</div>
+                            <div class="ms_last_message "  v-if="contacts[contact].messages.length > 0"> Ultimo accesso oggi alle {{getLastTime(contact)}}</div>
                         </div>
 
                     </div>
@@ -110,8 +110,7 @@
                         </ul>
 
                     </span>
-                
-                    
+            
                     <input v-model="inputMessage" @keyup.enter="sendMsg" type="text" id="userInput" class="flex-grow-1 border-0" placeholder=" Scrivi un messaggio">
                     <i class="fa-solid fa-microphone fs-4 mx-3  ms_color"></i>
                 </div>

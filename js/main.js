@@ -8,7 +8,6 @@ createApp({
       contact: 0,
       inputMessage: '',
       research: '',
-      clock: DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS),
       contacts: [
           {
           name: 'Michele',
@@ -180,7 +179,7 @@ createApp({
     },
     sendMsg(){
         this.contacts[this.contact].messages.push({
-            date: this.clock,
+            date: DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS),
             message: this.inputMessage,
             status: 'sent'
         })
@@ -188,7 +187,7 @@ createApp({
 
         setTimeout(()=>{
             this.contacts[this.contact].messages.push({
-                date: this.clock,
+                date: DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS),
                 message: 'OK!',
                 status: 'received'
             })
